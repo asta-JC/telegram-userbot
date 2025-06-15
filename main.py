@@ -1,7 +1,7 @@
 from pyrogram import Client, filters
 import asyncio
 import re
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 import httpx
 
 api_id = 22542996
@@ -234,7 +234,8 @@ async def update_bio_loop():
     print("📝 Bio + ob‑havo yangilanishi boshlandi...")
 
     while True:
-        now = datetime.now()
+        uzbekistan_tz = timezone(timedelta(hours=5))
+        now = datetime.now(uzbekistan_tz)
         time_str = now.strftime("%H:%M")
         weather = await get_andijan_weather()
         bio_text = f"⏰ {time_str} • {weather}"
