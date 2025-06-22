@@ -1,2 +1,9 @@
 pyrogram
+tgcrypto
 httpx
+speechrecognition
+pydub
+deep-translator
+uvicorn
+fastapi
+pillow
