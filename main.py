@@ -53,8 +53,8 @@ async def update_bio_loop():
         now = datetime.now(uzbekistan_tz)
         date_str = now.strftime("%d.%m.%Y")  # Masalan: 22.06.2025
         time_str = now.strftime("%H:%M")
-        weekdays_uz = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"]
-        weekday_str = weekdays_uz[now.weekday()+1]  # 0 = Dushanba, 6 = Yakshanba
+        weekdays_uz = ["Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba", "Yakshanba"]
+        weekday_str = weekdays_uz[now.weekday()]  # 0 = Dushanba, 6 = Yakshanba
         weather = await get_andijan_weather()
         bio_text = f"⏰ {time_str} • 📆 {date_str} ({weekday_str}) • {weather}"
 
