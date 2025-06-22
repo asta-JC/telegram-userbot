@@ -56,7 +56,7 @@ async def update_bio_loop():
         weekdays_uz = ["Yakshanba", "Dushanba", "Seshanba", "Chorshanba", "Payshanba", "Juma", "Shanba"]
         weekday_str = weekdays_uz[now.weekday()]  # 0 = Dushanba, 6 = Yakshanba
         weather = await get_andijan_weather()
-        bio_text = f"⏰ {time_str} • 📆 {date_str}({weekday_str}) • {weather}"
+        bio_text = f"⏰ {time_str} • 📆 {date_str} ({weekday_str}) • {weather}"
 
         try:
             await app.update_profile(bio=bio_text)
